@@ -105,16 +105,16 @@ if len(BIN_CHANNEL) == 0:
     exit()
 else:
     BIN_CHANNEL = int(BIN_CHANNEL)
-URL = environ.get("URL", "")
+URL = environ.get("URL", https://tamilan-bot-kitj.onrender.com"")
 if len(URL) == 0:
-    logging.error('URL is missing, exiting now')
+    logging.error('URL https://tamilan-bot-kitj.onrender.com')
     exit()
 else:
     if URL.startswith('https://'):
         if not URL.endswith("/"):
             URL += '/'
     elif '.' in URL:
-        URL = f'http://{URL}:{PORT}/'
+        URL = f'http://{URL}:{PORT}/'https://tamilan-bot-kitj.onrender.com
     else:
-        logging.error('URL is not valid, exiting now')
+        logging.error('URL https://tamilan-bot-kitj.onrender.com')
         exit()
