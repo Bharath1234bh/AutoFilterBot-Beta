@@ -13,19 +13,19 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-API_ID = environ.get('API_ID', 24699616'')
+API_ID = environ.get('API_ID', '')
 if len(API_ID) == 0:
-    logging.error('API_ID 24699616 ')
+    logging.error('API_ID is missing, exiting now')
     exit()
 else:
     API_ID = int(API_ID)
-API_HASH = environ.get('API_HASH' d6e5d8450631e24e0da974846127368b'')
+API_HASH = environ.get('API_HASH', '')
 if len(API_HASH) == 0:
-    logging.error('API_HASH d6e5d8450631e24e0da974846127368b ')
+    logging.error('API_HASH is missing, exiting now')
     exit()
-BOT_TOKEN = environ.get('BOT_TOKEN',6880928707:AAGjIaZIcLD6XoO4QJ4v3tmKmxbFLhenUag '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 if len(BOT_TOKEN) == 0:
-    logging.error('BOT_TOKEN 6880928707:AAGjIaZIcLD6XoO4QJ4v3tmKmxbFLhenUag')
+    logging.error('BOT_TOKEN is missing, exiting now')
     exit()
 PORT = int(environ.get('PORT', '8080'))
 
@@ -33,9 +33,9 @@ PORT = int(environ.get('PORT', '8080'))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/58fef5cb458d5b29b0186.jpg https://telegra.ph/file/f0aa4f433132769f8970c.jpg https://telegra.ph/file/f515fbc2084592eca60a5.jpg https://telegra.ph/file/20dbdcffaa89bd3d09a74.jpg https://telegra.ph/file/6045ba953af4def846238.jpg')).split()
 
 # Bot Admins
-ADMINS = environ.get('ADMINS'5359624166 '')
+ADMINS = environ.get('ADMINS', '')
 if len(ADMINS) == 0:
-    logging.error('ADMINS 5359624166')
+    logging.error('ADMINS is missing, exiting now')
     exit()
 else:
     ADMINS = [int(admins) for admins in ADMINS.split()]
@@ -43,9 +43,9 @@ else:
 # Channels
 INDEX_CHANNELS = [int(index_channels) if index_channels.startswith("-") else index_channels for index_channels in environ.get('INDEX_CHANNELS', '').split()]
 AUTH_CHANNEL = [int(auth_channels) for auth_channels in environ.get('AUTH_CHANNEL', '').split()]
-LOG_CHANNEL = environ.get('LOG_CHANNEL',-1002071195970 '')
+LOG_CHANNEL = environ.get('LOG_CHANNEL', '')
 if len(LOG_CHANNEL) == 0:
-    logging.error('LOG_CHANNEL -1002071195970')
+    logging.error('LOG_CHANNEL is missing, exiting now')
     exit()
 else:
     LOG_CHANNEL = int(LOG_CHANNEL)
@@ -63,16 +63,16 @@ if len(OPENAI_API) == 0:
     exit()
 
 # MongoDB information
-DATABASE_URL = environ.get('DATABASE_URL',mongodb+srv://TamilzanMr:TamilzanMr@cluster0.1gcdjrz.mongodb.net/?retryWrites=true&w=majority ")
+DATABASE_URL = environ.get('DATABASE_URL', "")
 if len(DATABASE_URL) == 0:
-    logging.error('DATABASE_URL mongodb+srv://TamilzanMr:TamilzanMr@cluster0.1gcdjrz.mongodb.net/?retryWrites=true&w=majority')
+    logging.error('DATABASE_URL is missing, exiting now')
     exit()
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 # Links
-SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/Delta_Movies_Tamil')
-UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/Delta_Movies_Tamil')
+SUPPORT_LINK = environ.get('SUPPORT_LINK', 'https://t.me/SL_Bots_Support')
+UPDATES_LINK = environ.get('UPDATES_LINK', 'https://t.me/SL_Bots_Updates')
 
 # Bot settings
 AUTO_FILTER = is_enabled((environ.get('AUTO_FILTER', "True")), True)
@@ -105,16 +105,16 @@ if len(BIN_CHANNEL) == 0:
     exit()
 else:
     BIN_CHANNEL = int(BIN_CHANNEL)
-URL = environ.get("URL", https://tamilan-bot-kitj.onrender.com"")
+URL = environ.get("URL", "")
 if len(URL) == 0:
-    logging.error('URL https://tamilan-bot-kitj.onrender.com')
+    logging.error('URL is missing, exiting now')
     exit()
 else:
     if URL.startswith('https://'):
         if not URL.endswith("/"):
             URL += '/'
     elif '.' in URL:
-        URL = f'http://{URL}:{PORT}/'https://tamilan-bot-kitj.onrender.com
+        URL = f'http://{URL}:{PORT}/'
     else:
-        logging.error('URL https://tamilan-bot-kitj.onrender.com')
+        logging.error('URL is not valid, exiting now')
         exit()
